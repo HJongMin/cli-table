@@ -5,39 +5,39 @@
 
 var Table = require('../lib');
 var fs = require('fs');
-// var obj = JSON.parse(fs.readFileSync('/tmp/result.json', 'utf8'));
+var obj = JSON.parse(fs.readFileSync('/tmp/result.json', 'utf8'));
 
 
-var obj = {
-  "testsuites": {
-    "testsuite": [
-      {
-        "testcase": [
-          {
-            "system-out": {
-              "contents": [
-                "http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280"
-              ]
-            },
-            "name": "SAMSUNG GALAXY_NOTE4 / ANDROID 6.0",
-            "time": "315"
-          },
-          {
-            "system-out": {
-              "contents": [
-                "http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88281"
-              ]
-            },
-            "name": "LG G5 / ANDROID 7.0",
-            "time": "237"
-          }
-        ],
-        "name": "\uc1fc\ud551\uc571 \ud14c\uc2a4\ud2b8.TestBot"
-      }
-    ],
-    "name": "TestBot Test"
-  }
-};
+// var obj = {
+//   "testsuites": {
+//     "testsuite": [
+//       {
+//         "testcase": [
+//           {
+//             "system-out": {
+//               "contents": [
+//                 "http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280"
+//               ]
+//             },
+//             "name": "SAMSUNG GALAXY_NOTE4 / ANDROID 6.0",
+//             "time": "315"
+//           },
+//           {
+//             "system-out": {
+//               "contents": [
+//                 "http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88281"
+//               ]
+//             },
+//             "name": "LG G5 / ANDROID 7.0",
+//             "time": "237"
+//           }
+//         ],
+//         "name": "\uc1fc\ud551\uc571 \ud14c\uc2a4\ud2b8.TestBot"
+//       }
+//     ],
+//     "name": "TestBot Test"
+//   }
+// };
 
 
 var table = new Table({
@@ -48,8 +48,6 @@ var table = new Table({
   style: { 'padding-left': 0, 'padding-right': 6 }
 });
 
-console.log(obj);
-console.log(obj['testsuites']);
 var testcase = obj['testsuites']['testsuite'][0]['testcase'];
 console.log(testcase);
 for ( var i = 0; i < testcase.length; i++ ) {
