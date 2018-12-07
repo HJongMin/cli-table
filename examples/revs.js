@@ -45,18 +45,22 @@ var table = new Table({
          , 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': ''
          , 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': ''
          , 'right': '' , 'right-mid': '' , 'middle': ' ' },
-  style: { 'padding-left': 0, 'padding-right': 20 }
+  style: { 'padding-left': 0, 'padding-right': 6 }
 });
 
-for ( var item in obj['testsuites']['testsuite']['testcase'] ) {
+var testcase = obj['testsuites']['testsuite']['testcase'];
+for ( var i = 0; i < testcase.length(); i++ ) {
+    console.log(testcase[i]);
+    table.push([i, testcase[i]['name'], testcase[i]['time'], testcase[i]['system-out']['contents'][0])
     console.log(item);
 }
 
+console.log('table : ', table);
 
-table.push(
-    ['LG G5 / ANDROID 7.0', '237', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88281']
-  , ['SAMSUNG GALAXY_NOTE4 / ANDROID 6.0', '315', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280']
-);
+// table.push(
+//     ['LG G5 / ANDROID 7.0', '237', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88281']
+//   , ['SAMSUNG GALAXY_NOTE4 / ANDROID 6.0', '315', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280']
+// );
 
 console.log(table.toString());
 
