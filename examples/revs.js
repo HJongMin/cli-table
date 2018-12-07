@@ -51,7 +51,7 @@ var table = new Table({
 var testcase = obj['testsuites']['testsuite']['testcase'];
 for ( var i = 0; i < testcase.length(); i++ ) {
     console.log(testcase[i]);
-    table.push([i, testcase[i]['name'], testcase[i]['time'], testcase[i]['system-out']['contents'][0])
+    table.push([i, testcase[i]['name'], testcase[i]['time'], testcase[i]['system-out']['contents'][0] ])
     console.log(item);
 }
 
