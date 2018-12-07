@@ -5,10 +5,10 @@
 
 var Table = require('../lib');
 var fs = require('fs');
-var obj = JSON.parse(fs.readFileSync('/tmp/result.json', 'utf8'));
+// var obj = JSON.parse(fs.readFileSync('/tmp/result.json', 'utf8'));
 
-/* obj example
-{
+
+var obj = {
   "testsuites": {
     "testsuite": [
       {
@@ -37,8 +37,8 @@ var obj = JSON.parse(fs.readFileSync('/tmp/result.json', 'utf8'));
     ],
     "name": "TestBot Test"
   }
-}
-*/
+};
+
 
 var table = new Table({
   chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': ''
