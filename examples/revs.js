@@ -23,6 +23,24 @@ var obj = JSON.parse(fs.readFileSync('/tmp/result.json', 'utf8'));
 //             "time": "315"
 //           },
 //           {
+//             "error": {
+//               "message": [
+//                 "http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280"
+//               ]
+//             },
+//             "name": "SAMSUNG GALAXYS7_EDGE / ANDROID 6.0",
+//             "time": "365"
+//           },
+//           {
+//             "failure": {
+//               "message": [
+//                 "http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280"
+//               ]
+//             },
+//             "name": "SAMSUNG GALAXY_S7 / ANDROID 6.0",
+//             "time": "215"
+//           },
+//           {
 //             "system-out": {
 //               "contents": [
 //                 "http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88281"
