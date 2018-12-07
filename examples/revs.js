@@ -57,3 +57,21 @@ var cross_table = new Table({ head: ["", "Header #1", "Header #2"] });
 cross_table.push({ "Header #3": ["Value 1", "Value 2"] },
                  { "Header #4": ["Value 3", "Value 4"] });
 console.log(cross_table.toString());
+
+
+
+
+const table = new Table({
+  chars: { 'top': '' , 'top-mid': '' , 'top-left': '' , 'top-right': ''
+         , 'bottom': '' , 'bottom-mid': '' , 'bottom-left': '' , 'bottom-right': ''
+         , 'left': '' , 'left-mid': '' , 'mid': '' , 'mid-mid': ''
+         , 'right': '' , 'right-mid': '' , 'middle': ' ' },
+  style: { 'padding-left': 0, 'padding-right': 0 }
+});
+
+table.push(
+    ['LG G5 / ANDROID 7.0', '237', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88281']
+  , ['SAMSUNG GALAXY_NOTE4 / ANDROID 6.0', '315', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280']
+);
+
+console.log(table.toString());
