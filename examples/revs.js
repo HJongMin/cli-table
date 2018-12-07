@@ -48,11 +48,13 @@ var table = new Table({
   style: { 'padding-left': 0, 'padding-right': 6 }
 });
 
-var testcase = obj['testsuites']['testsuite']['testcase'];
-for ( var i = 0; i < testcase.length(); i++ ) {
+console.log(obj);
+console.log(obj['testsuites']);
+var testcase = obj['testsuites']['testsuite'][0]['testcase'];
+console.log(testcase);
+for ( var i = 0; i < testcase.length; i++ ) {
     console.log(testcase[i]);
     table.push([i, testcase[i]['name'], testcase[i]['time'], testcase[i]['system-out']['contents'][0] ])
-    console.log(item);
 }
 
 console.log('table : ', table);
