@@ -67,76 +67,26 @@ var table = new Table({
 });
 
 var testcase = obj['testsuites']['testsuite'][0]['testcase'];
-console.log(testcase);
+
 for ( var i = 0; i < testcase.length; i++ ) {
-    console.log(testcase[i]);
-    table.push([i, testcase[i]['name'], testcase[i]['time'], testcase[i]['system-out']['contents'][0] ])
+
+  var test_status = '';
+  var message = '';
+
+  if (testcase[i].hasOwnProperty('system-out') ) {
+  	test_status = 'Passed';
+  	message = testcase[i]['system-out']['contents'][0];
+  } else if ( testcase[i].hasOwnProperty('error') ) {
+  	test_status = 'Error';
+  	message = testcase[i]['error']['message'][0];
+  } else if ( testcase[i].hasOwnProperty('failure') ) {
+  	test_status = 'Fail';
+  	message = testcase[i]['failure']['message'][0];
+  }
+
+  table.push([i, test_status, testcase[i]['name'], testcase[i]['time'], message ])
 }
 
-console.log('table : ', table);
-
-// table.push(
-//     ['LG G5 / ANDROID 7.0', '237', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88281']
-//   , ['SAMSUNG GALAXY_NOTE4 / ANDROID 6.0', '315', 'http://testex.embian.com/#/main/testLab/tResult/summary/0?tid=88280']
-// );
-
+console.log('****************** apptest.ai Test Result ******************')
 console.log(table.toString());
-
-
-
-
-
-
-
-/**
- * Example.
- */
-
-// /* col widths */
-// var table = new Table({
-//     head: ['Rel', 'Change', 'By', 'When']
-//   , colWidths: [6, 21, 25, 17]
-// });
-
-// table.push(
-//     ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']
-//   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
-// );
-
-// console.log(table.toString());
-
-
-// /* compact */
-// var table = new Table({
-//     head: ['Rel', 'Change', 'By', 'When']
-//   , colWidths: [6, 21, 25, 17]
-//   , style : {compact : true, 'padding-left' : 1}
-// });
-
-// table.push(
-//     ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']
-//   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
-//   , []
-//   , ['v0.1', 'Testing something cool', 'rauchg@gmail.com', '8 minutes ago']
-// );
-
-// console.log(table.toString());
-
-// /* headless */
-// var headless_table = new Table();
-// headless_table.push(['v0.1', 'Testing something cool', 'rauchg@gmail.com', '7 minutes ago']);
-// console.log(headless_table.toString());
-
-// /* vertical */
-// var vertical_table = new Table();
-// vertical_table.push({ "Some Key": "Some Value"},
-//                     { "Another much longer key": "And its corresponding longer value"}
-// );
-
-// console.log(vertical_table.toString());
-
-// /* cross */
-// var cross_table = new Table({ head: ["", "Header #1", "Header #2"] });
-// cross_table.push({ "Header #3": ["Value 1", "Value 2"] },
-//                  { "Header #4": ["Value 3", "Value 4"] });
-// console.log(cross_table.toString());
+console.log('************************************************************')
