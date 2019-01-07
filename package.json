@@ -17,12 +17,8 @@
     "table"
   ],
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "wcwidth": "^1.0.1"
-  },
-  "devDependencies": {
-    "expresso": "~0.9",
-    "should": "~0.6"
   },
   "main": "lib",
   "files": [
