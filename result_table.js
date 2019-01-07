@@ -3,7 +3,7 @@
  * Module requirements.
  */
 
-var Table = require('../lib');
+var Table = require('./lib');
 var fs = require('fs');
 var obj = JSON.parse(fs.readFileSync('/tmp/result.json', 'utf8'));
 
